@@ -12,6 +12,15 @@
             align-items: center;
         }
 
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .nav {
             display: flex;
             gap: 20px;
@@ -20,4 +29,66 @@
         .main {
             background-color: #ADD8E6;
             padding: 20px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .socialIcon {
+            width: 2.625rem;
+            height: 2.625rem;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .socialIcon:hover {
+            transform: scale(1.05);
+        }
+        
+        .socialIcon:hover > i {
+            scale: 1.2;
+            color: #fff;
+        }
+        
+        .socialIcon:before {
+            background: var(--color);
+            position: absolute;
+            width: 130%;
+            height: 130%;
+            left: -110%;
+            top: 80%;
+            transform: rotate(45deg);
+            transition: all 0.7s ease;
+        }
+        
+        @keyframes slide {
+            50% {
+                left: 10%;
+                top: -40%;
+            }
+            100% {
+                left: -15%;
+                top: -15%;
+            }
+        }
+        
+        .socialIcon:has(.fa-instagram) {
+            --color: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+        }
+        .socialIcon:has(.fa-linkedin-in) {
+            --color: #0077b5;
+        }
+        .socialIcon:has(.fa-github) {
+            --color: #333;
         }
